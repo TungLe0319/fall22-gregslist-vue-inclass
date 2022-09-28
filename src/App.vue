@@ -29,7 +29,16 @@
         </button>
 
         <button class="text-success lighten-30 selectable text-uppercase btn">Cars</button>
-        <button class="text-success lighten-30 selectable text-uppercase btn">Jobs</button>
+        <button class="text-success lighten-30 selectable text-uppercase btn">
+        <router-link
+            :to="{ name: 'Job' }"
+            class="text-success lighten-30 selectable text-uppercase"
+          >
+            
+          Jobs
+          </router-link>
+        
+        </button>
         <button class="text-success lighten-30 selectable text-uppercase btn">
           <router-link
             :to="{ name: 'Houses' }"

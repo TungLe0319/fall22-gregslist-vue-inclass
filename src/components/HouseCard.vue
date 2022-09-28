@@ -1,8 +1,8 @@
 <template>
   <div class="card">
-<img :src="house.imgUrl" alt="" class="rounded top">
+<img :src="house.imgUrl" alt="" class="rounded top ">
 <div class="card-body">
-
+{{house.price }}
 </div>
  <div class="align-items-center d-flex gap-2">
         <img :src="seller.picture" :alt="seller.name" :title="seller.name" height="30" class="rounded">
