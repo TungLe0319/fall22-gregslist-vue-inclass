@@ -4,7 +4,7 @@
       <div class="col-lg-3 col-md-4 my-3" v-for="c in classifieds" :key="c.id">
       
         <!-- SECTION HOUSES -->
-        <div v-if="c.listingType == 'House'">
+        <div v-if="c.listingType == 'House'" >
           <router-link :to="{
             name: 'Details',
             params:{
@@ -14,9 +14,7 @@
             <HouseCard :house="c.listing" :seller="c.seller" @deleteClassified="deleteClassified(c.id)" />
           </router-link>
         </div>
-        <div v-else>
-
-        </div>
+        
       </div>
     </div>
   </div>
@@ -34,11 +32,11 @@ import { useRoute } from "vue-router";
 
 export default {
   setup() {
- const route = useRoute();
-    const router = useRouter();
+//  const route = useRoute();
+//     const router = useRouter();
     async function getClassifieds() {
       try {
-        await classifiedsService.getClassifieds()
+        await classifiedsService.getClassifiedByListingType('House')
       } catch (error) {
         Pop.error(error, '[GettingClassifieds]')
       }

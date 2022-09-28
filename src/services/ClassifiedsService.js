@@ -24,8 +24,12 @@ class ClassifiedsService {
   }
 
   async getClassifiedByListingType(type){
-const res = await SandboxApi.get(`/api/classifieds/${type}`)
-AppState.activeClassified = new Classified(res.data); 
+const res = await SandboxApi.get(`/api/classifieds/`,{
+  params:{
+    listingType:type
+  }
+})
+ AppState.classifieds = res.data.map((c) => new Classified(c));
   }
 
   async createClassified(formData) {
