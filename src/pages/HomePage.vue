@@ -13,7 +13,7 @@
           </router-link>
         </div>
         <!-- SECTION HOUSES -->
-        <div v-if="c.listingType == 'House'">
+        <div v-else-if="c.listingType == 'House'">
           <router-link :to="{
             name: 'Details',
             params:{
@@ -21,6 +21,17 @@
             }
           }">
             <HouseCard :house="c.listing" :seller="c.seller" @deleteClassified="deleteClassified(c.id)" />
+          </router-link>
+        </div>
+        <!-- ! SECTION JOBS -->
+        <div v-else-if="c.listingType == 'Job'">
+          <router-link :to="{
+            name: 'Details',
+            params:{
+              id: c.id
+            }
+          }">
+            <JobCard :job="c.listing" :seller="c.seller" @deleteClassified="deleteClassified(c.id)" />
           </router-link>
         </div>
       </div>
@@ -36,6 +47,7 @@ import CarCard from '../components/CarCard.vue';
 import { classifiedsService } from '../services/ClassifiedsService.js';
 import Pop from '../utils/Pop.js';
 import HouseCard from "../components/HouseCard.vue";
+import JobCard from "../components/JobCard.vue";
 
 export default {
   setup() {
@@ -65,7 +77,7 @@ export default {
       }
     };
   },
-  components: { CarCard, HouseCard }
+  components: { CarCard, HouseCard, JobCard }
 }
 </script>
 

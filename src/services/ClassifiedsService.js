@@ -7,6 +7,7 @@ class ClassifiedsService {
   async getClassifieds() {
     const res = await SandboxApi.get('api/classifieds')
     AppState.classifieds = res.data.map(c => new Classified(c))
+    console.log(AppState.classifieds)
   }
 
 
@@ -22,6 +23,10 @@ class ClassifiedsService {
     AppState.activeClassified = new Classified(res.data) // Not a POJO!!!
   }
 
+  async getClassifiedByListingType(type){
+const res = await SandboxApi.get(`/api/classifieds/${type}`)
+AppState.activeClassified = new Classified(res.data); 
+  }
 
   async createClassified(formData) {
     const res = await SandboxApi.post('/api/classifieds', formData)

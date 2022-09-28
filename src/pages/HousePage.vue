@@ -1,7 +1,7 @@
 <template>
-  <div class="container-fluid "  >
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-lg-3 col-md-4 my-3" v-for="c in classifieds" :key="c.id" >
+      <div class="col-lg-3 col-md-4 my-3" v-for="c in classifieds" :key="c.id">
       
         <!-- SECTION HOUSES -->
         <div v-if="c.listingType == 'House'">
@@ -14,11 +14,13 @@
             <HouseCard :house="c.listing" :seller="c.seller" @deleteClassified="deleteClassified(c.id)" />
           </router-link>
         </div>
+        <div v-else>
+
+        </div>
       </div>
     </div>
   </div>
 </template>
-
 
 <script>
 import { computed } from '@vue/reactivity';
@@ -28,10 +30,12 @@ import CarCard from '../components/CarCard.vue';
 import { classifiedsService } from '../services/ClassifiedsService.js';
 import Pop from '../utils/Pop.js';
 import HouseCard from "../components/HouseCard.vue";
+import { useRoute } from "vue-router";
 
 export default {
   setup() {
-
+ const route = useRoute();
+    const router = useRouter();
     async function getClassifieds() {
       try {
         await classifiedsService.getClassifieds()
@@ -61,6 +65,6 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 
 </style>
