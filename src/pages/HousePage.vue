@@ -1,17 +1,8 @@
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid "  >
     <div class="row">
-      <div class="col-lg-3 col-md-4 my-3" v-for="c in classifieds" :key="c.id">
-        <div v-if="c.listingType == 'Car'">
-          <router-link :to="{
-            name: 'Details',
-            params:{
-              id: c.id
-            }
-          }">
-            <CarCard :car="c.listing" :seller="c.seller" @deleteClassified="deleteClassified(c.id)" />
-          </router-link>
-        </div>
+      <div class="col-lg-3 col-md-4 my-3" v-for="c in classifieds" :key="c.id" >
+      
         <!-- SECTION HOUSES -->
         <div v-if="c.listingType == 'House'">
           <router-link :to="{
@@ -27,6 +18,7 @@
     </div>
   </div>
 </template>
+
 
 <script>
 import { computed } from '@vue/reactivity';
@@ -69,6 +61,6 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 
 </style>
