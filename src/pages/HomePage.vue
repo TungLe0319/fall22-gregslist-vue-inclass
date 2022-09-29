@@ -1,6 +1,7 @@
 <template>
   <div class="container-fluid">
     <div class="row">
+      <!-- here if i put the v-if differently filter could've worked... VVV -->
       <div class="col-lg-3 col-md-4 my-3" v-for="c in classifieds" :key="c.id">
         <div v-if="c.listingType == 'Car'">
           <router-link :to="{
