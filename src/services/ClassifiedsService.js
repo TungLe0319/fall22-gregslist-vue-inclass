@@ -23,6 +23,9 @@ class ClassifiedsService {
     AppState.activeClassified = new Classified(res.data) // Not a POJO!!!
   }
 
+  //In Each of Houses/Job/Car Page the  getClassified method im passing down the 
+  //String of what we want to filter 'House' | 'Car' | 'Job'
+  //Comes down here as type and using that as our query parameter.
   async getClassifiedByListingType(type){
 const res = await SandboxApi.get(`/api/classifieds/`,{
   params:{

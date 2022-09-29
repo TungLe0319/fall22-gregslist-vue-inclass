@@ -14,6 +14,8 @@
         </div>
         <!-- SECTION HOUSES -->
         <div v-else-if="c.listingType == 'House'">
+          <!-- Sends each individual listing to DetailsPage 
+          In router.js the magic Variable we made was    path: '/classifieds/:id', so it must match in the params here -->
           <router-link :to="{
             name: 'Details',
             params:{

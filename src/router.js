@@ -38,9 +38,16 @@ const routes = [
     name: 'Jobs',
     component: loadPage('JobsPage'),
   },
+
+
   {
+    // NOTE CASE SENSITIVE
+    //is the path it sends the user on that page aka .com/cars
     path: '/cars',
+    //Must Match 
+      //  <router-link :to="{ name: 'Cars' }">  </router-link>
     name: 'Cars',
+    // Must Match CarsPage.vue File Name
     component: loadPage('CarsPage'),
   },
 ]
