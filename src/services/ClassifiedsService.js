@@ -38,6 +38,25 @@ const res = await SandboxApi.get(`/api/classifieds/`,{
     // AppState.classifieds = [...AppState.classifieds, new Classified(res.data)]
   }
 
+  // -----------------------FILTER FUNCTIONS-----------------------//
+  // async getOnlyCars(){
+  //   AppState.classifieds = AppState.classifieds.filter(c => c.listingType == 'Car')
+  // }
+  // async getOnlyJobs(){
+  //   AppState.classifieds = AppState.classifieds.filter(c => c.listingType == 'Job')
+  // }
+  // async getOnlyHouses(){
+  //   AppState.classifieds = AppState.classifieds.filter(c => c.listingType == 'Houses')
+  // }
+  async getOnlyType(type){
+    console.log(type);
+    AppState.classifieds = AppState.classifieds.filter(c => c.listingType == `${type}`)
+
+    let 
+
+    if(AppState.classifieds){}
+  }
+
 
 }
 

@@ -1,13 +1,23 @@
 <template>
-  <div class="card">
-<img :src="house.imgUrl" alt="" class="rounded top ">
-<div class="card-body">
-{{house.price }}
+  <div class="card" >
+    <div class="d-flex justify-content-center mt-2 "  >
+
+      <img :src="house.imgUrl " alt="" class="rounded top elevation-4 forcedImg img-fluid" >
+    </div>
+<div class="card-body text-center">
+  <h3 class="text-info">
+
+    <span class="text-warning">$</span>{{house.price }}
+  </h3>
 </div>
- <div class="align-items-center d-flex gap-2">
+ <div class="align-items-center d-flex gap-2 justify-content-between ms-2 mb-1">
         <img :src="seller.picture" :alt="seller.name" :title="seller.name" height="30" class="rounded">
-        <i class="mdi mdi-delete-forever fs-4 selectable rounded" @click.stop="$emit('deleteClassified')"
-          v-if="account.id == seller.id"></i>
+        {{seller.name}}
+        <div class="me-3">
+
+          <i class="mdi mdi-delete-forever fs-4 selectable rounded" @click.stop="$emit('deleteClassified')"
+            v-if="account.id == seller.id"></i>
+        </div>
       </div>
   </div>
 </template>
@@ -36,5 +46,9 @@ seller:{type: SellerProfile, required:true}
 
 
 <style lang="scss" scoped>
-
+.forcedImg{
+  height: 200px;
+  width: 270px;
+  object-fit: cover;
+}
 </style>

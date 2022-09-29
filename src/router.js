@@ -31,12 +31,17 @@ const routes = [
   {
     path: '/houses',
     name: 'Houses',
-    component: loadPage('HousePage'),
+    component: loadPage('HousesPage'),
   },
   {
     path: '/jobs',
-    name: 'Job',
-    component: loadPage('JobPage'),
+    name: 'Jobs',
+    component: loadPage('JobsPage'),
+  },
+  {
+    path: '/cars',
+    name: 'Cars',
+    component: loadPage('CarsPage'),
   },
 ]
 

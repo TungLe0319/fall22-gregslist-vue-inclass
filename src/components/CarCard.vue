@@ -1,6 +1,9 @@
 <template>
   <div class="card">
-    <img class="rounded-top forcedImg" :src="car.imgUrl" :alt="car.make">
+    <div class="mt-2 d-flex justify-content-center">
+      <img class="rounded elevation-3 forcedImg" :src="car.imgUrl" :alt="car.make">
+
+    </div>
     <div class="card-body d-flex justify-content-between align-items-center">
       <h5>{{car.make}} {{car.model}}</h5>
       <div class="align-items-center d-flex gap-2">
@@ -46,7 +49,7 @@ export default {
 <style lang="scss" scoped>
 .forcedImg{
   height: 200px;
-  width: 236px;
+  width: 276px;
   object-fit: cover;
 }
 </style>

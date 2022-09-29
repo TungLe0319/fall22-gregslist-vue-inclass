@@ -3,50 +3,82 @@
     <div class="row">
       <div class="col-md-2 d-none d-md-block bg-dark text-light sidebar">
         
+        <div class="mt-3 rounded ">
 
           <Login />
-        
+        </div>
+<div class="mt-2">
+ <span class="text-primary">Sort By Pages</span>
 
-          
-        <button class="btn mt-3">
-          <router-link
-            :to="{ name: 'Home' }"
-            class="text-success lighten-30 selectable text-uppercase"
-          >
-            Home
-          </router-link>
-        </button>
+</div>
+        <div class="border-top mt-2 ">
+          <button class="btn mt-3 text-success lighten-30 selectable text-uppercase">
+            <router-link
+              :to="{ name: 'Home' }"
+              class="text-success lighten-30  text-uppercase"
+            >
+              Home
+            </router-link>
+          </button>
+        </div>
 
-        <button
-          class="btn"
+          <div>
+ <button
+          class="btn text-success lighten-30 selectable text-uppercase"
           data-bs-target="#classifiedsCanvas"
           data-bs-toggle="offcanvas"
           v-if="account.id"
         >
-          <span class="text-success lighten-30 selectable text-uppercase">
+          <span class="text-success lighten-30  text-uppercase">
             Add a Listing
           </span>
         </button>
 
-        <button class="text-success lighten-30 selectable text-uppercase btn">Cars</button>
-        <button class="text-success lighten-30 selectable text-uppercase btn">
+          </div>
+
+          <div>
+  <button class="text-success lighten-30 selectable text-uppercase btn">
+    
+      <router-link
+              :to="{ name: 'Cars' }"
+              class="text-success lighten-30  text-uppercase"
+            >
+             Cars
+            </router-link>
+    
+  
+  </button>
+
+          </div>
+       
+<div>
+   <button class="text-success lighten-30 selectable text-uppercase btn">
         <router-link
-            :to="{ name: 'Job' }"
-            class="text-success lighten-30 selectable text-uppercase"
+            :to="{ name: 'Jobs' }"
+            class="text-success lighten-30  text-uppercase"
           >
             
           Jobs
           </router-link>
         
         </button>
-        <button class="text-success lighten-30 selectable text-uppercase btn">
+
+</div>
+      
+<div>
+<button class="text-success lighten-30 selectable text-uppercase btn">
           <router-link
             :to="{ name: 'Houses' }"
-            class="text-success lighten-30 selectable text-uppercase"
+            class="text-success lighten-30  text-uppercase"
           >
             Houses
           </router-link>
         </button>
+
+</div>
+
+  <HomeFilter/>
+        
 
       </div>
       <div class="col-md-10 main-content">
