@@ -52,9 +52,11 @@ const res = await SandboxApi.get(`/api/classifieds/`,{
     console.log(type);
     AppState.classifieds = AppState.classifieds.filter(c => c.listingType == `${type}`)
 
-    let 
 
-    if(AppState.classifieds){}
+
+    if(AppState.classifieds.length < 1){
+      await this.getClassifiedByListingType(type)
+    }
   }
 
 

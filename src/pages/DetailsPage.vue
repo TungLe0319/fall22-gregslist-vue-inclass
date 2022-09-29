@@ -1,22 +1,11 @@
 <template>
-  <div class="details d-flex" v-if="classified">
+  <div class="details mt-2 " v-if="classified">
     <div
-      class="col-12 d-flex justify-content-start align-items-center"
+      class="col-md-12 d-flex justify-content-start align-items-center"
       v-if="classified.listingType == 'Car'"
     >
       <!-- <CarCard :car="classified.listing" :seller="classified.seller" /> -->
-      <div class=" row">
-        <div class="col-md-6">
-          <img
-            :src="classified.listing.imgUrl"
-            alt=""
-            class="rounded elevation-3"
-          />
-        </div>
-       <div class="col-md-6">
-        <h1>TESTING</h1>
-       </div>
-      </div>
+  <CarDetails />
     </div>
 
 
@@ -39,6 +28,7 @@ import { AppState } from '../AppState.js';
 import CarCard from '../components/CarCard.vue';
 import { classifiedsService } from '../services/ClassifiedsService.js';
 import Pop from '../utils/Pop.js';
+import CarDetails from "../components/CarDetails.vue";
 
 export default {
   props: {},
@@ -60,6 +50,8 @@ export default {
       classified: computed(() => AppState.activeClassified),
     };
   },
-  components: { CarCard },
+  components: { CarCard, CarDetails },
 };
 </script>
+
+
