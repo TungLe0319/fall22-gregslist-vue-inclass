@@ -86,4 +86,12 @@ export default {
 
 <style scoped lang="scss">
 
+.text-shadow{
+  color: aliceblue;
+  text-shadow: 1px 1px black, 0px 0px 5px salmon;
+  font-weight: bold;
+  letter-spacing: 0.08rem
+  
+  /* Second Color  in text-shadow is the blur */
+}
 </style>
